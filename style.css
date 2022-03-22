@@ -87,3 +87,8 @@ td input{
   height: 50px;
   background-color: transparent;
 }
+
+td:nth-last-child(1){
+  text-align: center;
+  cursor: pointer;
+}
