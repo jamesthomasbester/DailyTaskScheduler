@@ -28,7 +28,9 @@ hours.forEach(element => {
         $(`#${element}`).css("background-color", "tomato");
     }else if(element == currentHour){
         $(`#${element}`).css("background-color", "#77dd77");
-        if(localStorage.getItem(`schedule${element}`) !== ""){
+        if(localStorage.getItem(`schedule${element}`) == "" || localStorage.getItem(`schedule${element}`) == null){
+            $(`#alert`).css("display","none");
+        }else{
             $(`#alert`).text((localStorage.getItem(`schedule${element}`)) + " at " + localStorage.getItem(`location${element}`) + ` @ ${formattedTime}!`);
             $(`#alert`).css("display", "inline");
         }
